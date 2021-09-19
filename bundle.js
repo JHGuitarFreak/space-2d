@@ -29149,7 +29149,9 @@ var Scene = function () {
       var starOut = pingPong(nebulaOut, ping, pong, starCount, function (source, destination) {
         var col_red = rand.random();
         var col_blue = rand.random();
-        var col_green = Math.min(col_red,col_blue);
+        var col_green = (col_red+col_blue)/2;
+        console.log(col_red);
+        console.log(col_blue);
         _this.starRenderer({
           center: [rand.random(), rand.random()],
           coreRadius: rand.random() * 0.0,
