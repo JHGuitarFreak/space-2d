@@ -85,14 +85,14 @@ export default class Scene {
 
     rand = random.rand(props.seed, 2000);
     let starCount = 0;
-    if (props.renderStars) starCount = Math.round(rand.random() * 200 + 1);
+    if (props.renderStars) starCount = Math.round(rand.random() * 10000 + 1);
     let starOut = pingPong(nebulaOut, ping, pong, starCount, (source, destination) => {
       this.starRenderer({
         center: [rand.random(), rand.random()],
         coreRadius: rand.random() * 0.0,
         coreColor: [1,1,1],
         haloColor: [rand.random(), rand.random(), rand.random()],
-        haloFalloff: rand.random() * 20000 + 32,
+        haloFalloff: rand.random() * 10000 + 700,
         resolution: [width, height],
         scale: scale,
         source: source,
