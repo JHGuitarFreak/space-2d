@@ -108,7 +108,7 @@ var GUI = function (_React$Component) {
         _react2.default.createElement(dg.Checkbox, { label: 'Soleil', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
         _react2.default.createElement(dg.Checkbox, { label: 'Nuages de gaz', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
         _react2.default.createElement(dg.Checkbox, { label: 'Échelle large', checked: this.props.shortScale, onChange: this.props.onChangeShortScale }),
-        _react2.default.createElement(dg.Checkbox, { a: 'Télécharger le résultat', id:'downloadpic' })
+        _react2.default.createElement(dg.Button, { label: 'Télécharger l\'image', onClick: this.onClickDlPic.bind(this) })
       );
     }
   }, {
@@ -119,6 +119,11 @@ var GUI = function (_React$Component) {
         seed: seed
       });
       this.props.onFinishChangeSeed(seed);
+    }
+  }, {
+    key: 'onClickDlPic',
+    value: function onClickDlPic() {
+      document.getElementById('downloadpic').click();
     }
   }]);
 
