@@ -386,10 +386,10 @@ var Button = function (_React$Component) {
                 MozUserSelect: 'none',
                 msUserSelect: 'none',
                 userSelect: 'none'
-              }
+              },
+              id : this.props.id
             },
             this.props.label,
-            this.props.id
           )
         )
       );
