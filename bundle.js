@@ -29149,14 +29149,11 @@ var Scene = function () {
       var starOut = pingPong(nebulaOut, ping, pong, starCount, function (source, destination) {
         var col_red = rand.random();
         var col_blue = rand.random();
-        var col_green = (col_red+col_blue)/2;
-        console.log(col_red);
-        console.log(col_blue);
         _this.starRenderer({
           center: [rand.random(), rand.random()],
           coreRadius: rand.random() * 0.0,
           coreColor: [1, 1, 1],
-          haloColor: [col_red, col_green, col_blue],
+          haloColor: [col_red, col_green, (col_red+col_blue)/2],
           haloFalloff: rand.random() * 10000 + 1500,
           resolution: [width, height],
           scale: scale,
