@@ -162,9 +162,9 @@ var scene = new _scene2.default(canvas);
 var props = {
   renderPointStars: true,
   renderStars: true,
-  renderSun: true,
+  renderSun: false,
   renderNebulae: true,
-  shortScale: false,
+  shortScale: true,
   seed: random.generateRandomSeed()
 };
 
@@ -29145,14 +29145,14 @@ var Scene = function () {
 
       rand = random.rand(props.seed, 2000);
       var starCount = 0;
-      if (props.renderStars) starCount = Math.round(rand.random() * 8 + 1);
+      if (props.renderStars) starCount = Math.round(rand.random() * 20000 + 1);
       var starOut = pingPong(nebulaOut, ping, pong, starCount, function (source, destination) {
         _this.starRenderer({
           center: [rand.random(), rand.random()],
           coreRadius: rand.random() * 0.0,
           coreColor: [1, 1, 1],
           haloColor: [rand.random(), rand.random(), rand.random()],
-          haloFalloff: rand.random() * 1024 + 32,
+          haloFalloff: rand.random() * 10000 + 700,
           resolution: [width, height],
           scale: scale,
           source: source,
