@@ -410,7 +410,8 @@ exports.default = Button;
 
 Button.propTypes = {
   label: _react2.default.PropTypes.string.isRequired,
-  onClick: _react2.default.PropTypes.func
+  onClick: _react2.default.PropTypes.func,
+  id: _react2.default.PropTypes.string
 };
 
 Button.contextTypes = {
