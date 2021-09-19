@@ -265,7 +265,7 @@ function refreshImg() {
 
 function onFinishChangeSeed(value) {
   props.seed = value;
-  //scene.render(props); // Ne pas regénérer à chaque modif
+  scene.render(props);
 }
 
 function onFinishChangeWidth(width) {
