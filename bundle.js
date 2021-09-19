@@ -388,7 +388,8 @@ var Button = function (_React$Component) {
                 userSelect: 'none'
               }
             },
-            this.props.label
+            this.props.label,
+            this.props.id
           )
         )
       );
