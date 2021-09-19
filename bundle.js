@@ -83,10 +83,10 @@ var GUI = function (_React$Component) {
             highlight: '#0d8'
           }
         },
-        _react2.default.createElement(dg.Text, { label: 'Seed', value: this.state.seed, onFinishChange: this.props.onFinishChangeSeed.bind(this) }),
-        _react2.default.createElement(dg.Button, { label: 'Randomize Seed', onClick: this.onClickRandomizeSeed.bind(this) }),
+        _react2.default.createElement(dg.Text, { label: 'Clé de géneration', value: this.state.seed, onFinishChange: this.props.onFinishChangeSeed.bind(this) }),
+        _react2.default.createElement(dg.Button, { label: 'Génerer clé aléatoire', onClick: this.onClickRandomizeSeed.bind(this) }),
         _react2.default.createElement(dg.Number, {
-          label: 'Width',
+          label: 'Largeur',
           min: 1,
           max: this.props.maxTextureSize,
           step: 1,
@@ -95,7 +95,7 @@ var GUI = function (_React$Component) {
           onFinishChange: this.props.onFinishChangeWidth
         }),
         _react2.default.createElement(dg.Number, {
-          label: 'Height',
+          label: 'Hauteur',
           min: 1,
           max: this.props.maxTextureSize,
           step: 1,
@@ -103,11 +103,11 @@ var GUI = function (_React$Component) {
           decimals: 0,
           onFinishChange: this.props.onFinishChangeHeight
         }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Point Stars', checked: this.props.renderPointStars, onChange: this.props.onChangeRenderPointStars }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Stars', checked: this.props.renderStars, onChange: this.props.onChangeRenderStars }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Sun', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Nebulae', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Short Scale', checked: this.props.shortScale, onChange: this.props.onChangeShortScale })
+        _react2.default.createElement(dg.Checkbox, { label: 'Étoiles lointaines', checked: this.props.renderPointStars, onChange: this.props.onChangeRenderPointStars }),
+        _react2.default.createElement(dg.Checkbox, { label: 'Étoiles proches', checked: this.props.renderStars, onChange: this.props.onChangeRenderStars }),
+        _react2.default.createElement(dg.Checkbox, { label: 'Soleil', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
+        _react2.default.createElement(dg.Checkbox, { label: 'Nuages de gaz', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
+        _react2.default.createElement(dg.Checkbox, { label: 'Échelle large', checked: this.props.shortScale, onChange: this.props.onChangeShortScale })
       );
     }
   }, {
@@ -2331,12 +2331,12 @@ var GUI = function (_React$Component) {
             this.state.expanded && _react2.default.createElement(
               'span',
               { style: noSelect },
-              'Close Controls'
+              'Fermer les contrôles'
             ),
             !this.state.expanded && _react2.default.createElement(
               'span',
               { style: noSelect },
-              'Open Controls'
+              'Ouvrir les contrôles'
             )
           )
         )
