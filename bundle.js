@@ -124,7 +124,7 @@ var GUI = function (_React$Component) {
   }, {
     key: 'onClickRegenImg',
     value: function onClickRegenImg() {
-      this.props.onFinishChangeSeed(seed);
+      this.props.onFinishChangeSeed(this.state.seed);
     }
   }, {
     key: 'onClickDlPic',
