@@ -2558,13 +2558,14 @@ var Number = function (_React$Component) {
           null,
           _react2.default.createElement(
             _components.Label,
-            null,
+            {id:this.props.id},
             this.props.label
           ),
           _react2.default.createElement(
             _components.Control,
             null,
             _react2.default.createElement(_components.NumberRange, {
+              id:this.props.id,
               decimals: this.props.decimals,
               value: this.state.value,
               min: this.props.min,
@@ -2581,12 +2582,12 @@ var Number = function (_React$Component) {
           null,
           _react2.default.createElement(
             _components.Label,
-            null,
+            {id:this.props.id},
             this.props.label
           ),
           _react2.default.createElement(
             _components.Control,
-            null,
+            {id:this.props.id},
             _react2.default.createElement(_components.Number, {
               decimals: this.props.decimals,
               value: this.state.value,
@@ -2628,6 +2629,7 @@ exports.default = Number;
 
 
 Number.propTypes = {
+  id: _react2.default.PropTypes.string,
   value: _react2.default.PropTypes.number,
   min: _react2.default.PropTypes.number,
   max: _react2.default.PropTypes.number,
