@@ -1310,6 +1310,7 @@ exports.default = Number;
 
 
 Number.propTypes = {
+  id: _react2.default.PropTypes.string,
   value: _react2.default.PropTypes.number.isRequired,
   width: _react2.default.PropTypes.string,
   onChange: _react2.default.PropTypes.func,
@@ -2589,6 +2590,7 @@ var Number = function (_React$Component) {
             _react2.default.createElement(_components.Number, {
               decimals: this.props.decimals,
               value: this.state.value,
+              id:this.props.id,
               onChange: this.handleChange.bind(this),
               onFinishChange: this.handleFinishChange.bind(this),
               width: '100%'
