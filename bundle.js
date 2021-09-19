@@ -108,7 +108,7 @@ var GUI = function (_React$Component) {
         _react2.default.createElement(dg.Checkbox, { label: 'Soleil', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
         _react2.default.createElement(dg.Checkbox, { label: 'Nuages de gaz', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
         _react2.default.createElement(dg.Checkbox, { label: 'Échelle large', checked: this.props.shortScale, onChange: this.props.onChangeShortScale }),
-        _react2.default.createElement(dg.Button, { label: 'Télécharger l\'image', onClick: this.onClickDownloadPic.bind(this) })
+        _react2.default.createElement(dg.Checkbox, { label: 'Télécharger le résultat', id:'downloadpic' })
       );
     }
   }, {
@@ -119,14 +119,6 @@ var GUI = function (_React$Component) {
         seed: seed
       });
       this.props.onFinishChangeSeed(seed);
-    }
-  }, {
-    key: 'onClickDownloadPic',
-    value: function onClickDownloadPic() {
-      console.log('Downloading pic unavailable for now');
-      var img_canvas = document.getElementById('render-canvas');
-      var dataURL = canvas.toDataURL();
-      window.location.href = img.replace('data:image/png;base64,','data:application/octet-stream;base64,');
     }
   }]);
 
@@ -29195,6 +29187,11 @@ var Scene = function () {
         destination: undefined,
         viewport: viewport
       });
+      
+      if (document.getElementById('downloadpic').checked) {
+        var img = this.canvas.toDataURL("image/png",1);
+        window.location.href = img.replace('data:image/png;base64,','data:application/octet-stream;base64,');
+      }
     }
   }]);
 
