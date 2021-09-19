@@ -269,8 +269,8 @@ function refreshImg() {
 }
 
 function onClickUseScreenDimensions() {
-  width = window.screen.width * window.devicePixelRatio;
-  height = window.screen.height * window.devicePixelRatio;
+  var width = window.screen.width * window.devicePixelRatio;
+  var height = window.screen.height * window.devicePixelRatio;
   if (width === canvas.width && height === canvas.height) return;
   document.getElementById("width_num").value = width;
   document.getElementById("height_num").value = height;
