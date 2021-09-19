@@ -29097,6 +29097,8 @@ var Scene = function () {
   _createClass(Scene, [{
     key: 'render',
     value: function render(props) {
+      document.getElementById("btnRegenImg").textContent = 'Chargement du résultat..';
+
       var _this = this;
 
       var ping = this.ping;
@@ -29205,6 +29207,7 @@ var Scene = function () {
       var link = document.getElementById("downloadpic");
       link.href = imgsrc;
       link.setAttribute('download',props.seed+'_'+width+'x'+height+'.png');
+      document.getElementById("btnRegenImg").textContent = 'Regénerer le résultat';
     }
   }]);
 
