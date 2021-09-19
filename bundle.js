@@ -85,7 +85,6 @@ var GUI = function (_React$Component) {
         },
         _react2.default.createElement(dg.Number, {
           label: 'Largeur',
-          id:'width_num',
           min: 1,
           max: this.props.maxTextureSize,
           step: 1,
@@ -95,7 +94,6 @@ var GUI = function (_React$Component) {
         }),
         _react2.default.createElement(dg.Number, {
           label: 'Hauteur',
-          id:'height_num',
           min: 1,
           max: this.props.maxTextureSize,
           step: 1,
@@ -272,8 +270,10 @@ function onClickUseScreenDimensions() {
   var width = window.screen.width * window.devicePixelRatio;
   var height = window.screen.height * window.devicePixelRatio;
   if (width === canvas.width && height === canvas.height) return;
-  document.getElementById("width_num").value = width;
-  document.getElementById("height_num").value = height;
+  var Largeur = $('div:contains("Largeur")');
+  Largeur.eq(Largeur.length-2).find('input').val(width);
+  var Hauteur = $('div:contains("Hauteur")');
+  Hauteur.eq(Hauteur.length-2).find('input').val(height);
   resize(Math.round(width), Math.round(height));
 }
 
