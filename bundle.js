@@ -29147,11 +29147,14 @@ var Scene = function () {
       var starCount = 0;
       if (props.renderStars) starCount = Math.round(rand.random() * 20000 + 1);
       var starOut = pingPong(nebulaOut, ping, pong, starCount, function (source, destination) {
+        var col_red = rand.random();
+        var col_blue = rand.random();
+        var col_green = Math.min(col_red,col_blue);
         _this.starRenderer({
           center: [rand.random(), rand.random()],
           coreRadius: rand.random() * 0.0,
           coreColor: [1, 1, 1],
-          haloColor: [rand.random(), rand.random(), rand.random()],
+          haloColor: [col_red, col_green, col_blue],
           haloFalloff: rand.random() * 10000 + 700,
           resolution: [width, height],
           scale: scale,
