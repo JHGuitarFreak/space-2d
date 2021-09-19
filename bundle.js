@@ -119,11 +119,16 @@ var GUI = function (_React$Component) {
         seed: seed
       });
       this.props.onFinishChangeSeed(seed);
-    },
+    }
+  }, {
     {
     key: 'onClickDownloadPic',
     value: function onClickDownloadPic() {
       console.log('Downloading pic unavailable for now');
+      var img_canvas = document.getElementById('render-canvas');
+      var dataURL = canvas.toDataURL();
+      window.location.href = img.replace('data:image/png;base64,','data:application/octet-stream;base64,');
+      
     }
   }]);
 
