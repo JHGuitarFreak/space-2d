@@ -85,7 +85,6 @@ var GUI = function (_React$Component) {
         },
         _react2.default.createElement(dg.Text, { label: 'Clé seed', value: this.state.seed, onFinishChange: this.props.onFinishChangeSeed.bind(this) }),
         _react2.default.createElement(dg.Button, { label: 'Génerer clé aléatoire', onClick: this.onClickRandomizeSeed.bind(this) }),
-        _react2.default.createElement(dg.Button, { label: 'Regénerer le résultat', id: 'btnRegenImg', onClick: this.onClickRegenImg.bind(this) }),
         _react2.default.createElement(dg.Number, {
           label: 'Largeur',
           min: 1,
@@ -127,6 +126,7 @@ var GUI = function (_React$Component) {
         _react2.default.createElement(dg.Checkbox, { label: 'Soleil', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
         _react2.default.createElement(dg.Checkbox, { label: 'Nuages de gaz', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
         _react2.default.createElement(dg.Checkbox, { label: 'Échelle large', checked: this.props.shortScale, onChange: this.props.onChangeShortScale }),
+        _react2.default.createElement(dg.Button, { label: 'Regénerer le résultat', id: 'btnRegenImg', onClick: this.onClickRegenImg.bind(this) }),
         _react2.default.createElement(dg.Button, { label: 'Télécharger le résultat (PNG)', onClick: this.onClickDlPic.bind(this) })
       );
     }
@@ -142,7 +142,7 @@ var GUI = function (_React$Component) {
   }, {
     key: 'onClickRegenImg',
     value: function onClickRegenImg() {
-      this.props.onFinishChangeSeed(this.state.seed);
+      this.props.refreshImg();
     }
   }, {
     key: 'onClickDlPic',
@@ -205,6 +205,7 @@ scene.render(props);
 
 _reactDom2.default.render(_react2.default.createElement(_gui2.default, {
   seed: props.seed,
+  refreshImg: refreshImg,
   onFinishChangeSeed: onFinishChangeSeed,
   maxTextureSize: scene.maxTextureSize,
   width: canvas.width,
@@ -233,7 +234,7 @@ function resize(width, height) {
   canvas.width = width;
   canvas.height = height;
   reflow(width, height);
-  //scene.render(props); // Ne pas regénérer à chaque resize
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 function reflow(width, height) {
@@ -258,9 +259,13 @@ window.onresize = function () {
   reflow(canvas.width, canvas.height);
 };
 
+function refreshImg() {
+  scene.render(props);
+}
+
 function onFinishChangeSeed(value) {
   props.seed = value;
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 function onFinishChangeWidth(width) {
@@ -275,37 +280,37 @@ function onFinishChangeHeight(height) {
 
 function onChangeRenderPointStars(value) {
   props.renderPointStars = value;
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 function onChangeRenderStars(value) {
   props.renderStars = value;
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 function onChangeStarsDensity(value) {
   props.starsDensity = value;
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 function onChangeStarsSizes(value) {
   props.starsSizes = value;
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 function onChangeRenderSun(value) {
   props.renderSun = value;
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 function onChangeRenderNebulae(value) {
   props.renderNebulae = value;
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 function onChangeShortScale(value) {
   props.shortScale = value;
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque modif
 }
 
 },{"./gui":2,"./random":237,"./scene":238,"react":229,"react-dom":85}],4:[function(require,module,exports){
