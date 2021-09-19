@@ -106,6 +106,14 @@ var GUI = function (_React$Component) {
         }),
         _react2.default.createElement(dg.Checkbox, { label: 'Étoiles lointaines', checked: this.props.renderPointStars, onChange: this.props.onChangeRenderPointStars }),
         _react2.default.createElement(dg.Checkbox, { label: 'Étoiles proches', checked: this.props.renderStars, onChange: this.props.onChangeRenderStars }),
+        _react2.default.createElement(dg.Number, {
+          label: 'Densité d\'étoiles proches',
+          min: 1,
+          max: 100,
+          step: 1,
+          value: this.props.starsDensity,
+          decimals: 0
+        }),
         _react2.default.createElement(dg.Checkbox, { label: 'Soleil', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
         _react2.default.createElement(dg.Checkbox, { label: 'Nuages de gaz', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
         _react2.default.createElement(dg.Checkbox, { label: 'Échelle large', checked: this.props.shortScale, onChange: this.props.onChangeShortScale }),
@@ -174,6 +182,7 @@ var scene = new _scene2.default(canvas);
 var props = {
   renderPointStars: true,
   renderStars: true,
+  starsDensity: 20,
   renderSun: false,
   renderNebulae: true,
   shortScale: true,
@@ -194,6 +203,7 @@ _reactDom2.default.render(_react2.default.createElement(_gui2.default, {
   renderPointStars: props.renderPointStars,
   onChangeRenderPointStars: onChangeRenderPointStars,
   renderStars: props.renderStars,
+  starsDensity: props.starsDensity,
   onChangeRenderStars: onChangeRenderStars,
   renderSun: props.renderSun,
   onChangeRenderSun: onChangeRenderSun,
@@ -29160,7 +29170,7 @@ var Scene = function () {
 
       rand = random.rand(props.seed, 2000);
       var starCount = 0;
-      if (props.renderStars) starCount = Math.round(rand.random() * 20000 + 1);
+      if (props.renderStars) starCount = Math.round(rand.random() * 500 * props.starsDensity + 1);
       var starOut = pingPong(nebulaOut, ping, pong, starCount, function (source, destination) {
         var col_red = rand.random();
         var col_blue = rand.random();
@@ -29169,7 +29179,7 @@ var Scene = function () {
           coreRadius: rand.random() * 0.0,
           coreColor: [1, 1, 1],
           haloColor: [col_red, (col_red+col_blue)/2, col_blue],
-          haloFalloff: rand.random() * 10000 + 1500,
+          haloFalloff: rand.random() * starCount/2 + 1500,
           resolution: [width, height],
           scale: scale,
           source: source,
