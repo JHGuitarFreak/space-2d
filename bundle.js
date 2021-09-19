@@ -267,14 +267,14 @@ function refreshImg() {
 }
 
 function onClickUseScreenDimensions() {
-  var width = window.screen.width * window.devicePixelRatio;
-  var height = window.screen.height * window.devicePixelRatio;
+  var width = Math.round(window.screen.width * window.devicePixelRatio);
+  var height = Math.round(window.screen.height * window.devicePixelRatio);
   if (width === canvas.width && height === canvas.height) return;
   var Largeur = $('div:contains("Largeur")');
   Largeur.eq(Largeur.length-2).find('input').val(width);
   var Hauteur = $('div:contains("Hauteur")');
   Hauteur.eq(Hauteur.length-2).find('input').val(height);
-  resize(Math.round(width), Math.round(height));
+  resize(width, height);
 }
 
 function onFinishChangeSeed(value) {
