@@ -103,7 +103,7 @@ var GUI = function (_React$Component) {
           decimals: 0,
           onFinishChange: this.props.onFinishChangeHeight
         }),
-        _react2.default.createElement(dg.Button, { label: 'Utilisez les dimensions de l\'écran', onClick: this.onClickUseScreenDimensions.bind(this) }),
+        _react2.default.createElement(dg.Button, { label: 'Utilisez les dimensions de l\'écran', onClick: this.onClickUseScreenDimensions }),
         _react2.default.createElement(dg.Button, { label: 'Génerer une nouvelle image', onClick: this.onClickRandomizeSeed.bind(this) }),
         _react2.default.createElement(dg.Checkbox, { label: 'Étoiles lointaines', checked: this.props.renderPointStars, onChange: this.props.onChangeRenderPointStars }),
         _react2.default.createElement(dg.Checkbox, { label: 'Étoiles proches', checked: this.props.renderStars, onChange: this.props.onChangeRenderStars }),
