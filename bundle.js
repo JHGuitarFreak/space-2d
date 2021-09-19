@@ -29194,7 +29194,7 @@ var Scene = function () {
       });
       
       var imgsrc = this.canvas.toDataURL("image/png",1);
-      link = document.getElementById("downloadpic");
+      var link = document.getElementById("downloadpic");
       link.href = imgsrc;
       link.setAttribute('download',document.querySelector("input[type='text']").value+'.png');
     }
