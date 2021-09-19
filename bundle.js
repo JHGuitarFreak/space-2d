@@ -2555,15 +2555,15 @@ var Number = function (_React$Component) {
       if (this.props.min !== undefined && this.props.max !== undefined) {
         return _react2.default.createElement(
           _components.Row,
-          {id:this.props.id},
+          {id:this.state.id},
           _react2.default.createElement(
             _components.Label,
-            {id:this.props.id},
+            {id:this.state.id},
             this.props.label
           ),
           _react2.default.createElement(
             _components.Control,
-            {id:this.props.id},
+            {id:this.state.id},
             _react2.default.createElement(_components.NumberRange, {
               id:this.props.id,
               decimals: this.props.decimals,
@@ -2579,15 +2579,15 @@ var Number = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           _components.Row,
-          {id:this.props.id},
+          {id:this.state.id},
           _react2.default.createElement(
             _components.Label,
-            {id:this.props.id},
+            {id:this.state.id},
             this.props.label
           ),
           _react2.default.createElement(
             _components.Control,
-            {id:this.props.id},
+            {id:this.state.id},
             _react2.default.createElement(_components.Number, {
               decimals: this.props.decimals,
               value: this.state.value,
