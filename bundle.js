@@ -29157,7 +29157,7 @@ var Scene = function () {
           coreRadius: rand.random() * 0.0,
           coreColor: [1, 1, 1],
           haloColor: [col_red, col_green, col_blue],
-          haloFalloff: rand.random() * 10000 + 700,
+          haloFalloff: rand.random() * 10000 + 1500,
           resolution: [width, height],
           scale: scale,
           source: source,
