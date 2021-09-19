@@ -29203,7 +29203,7 @@ var Scene = function () {
           coreRadius: rand.random() * 0.0,
           coreColor: [1, 1, 1],
           haloColor: [col_red, (col_red+col_blue)/2, col_blue],
-          haloFalloff: rand.random() * starCount/props.starsSizes + 3000/starsSizes,
+          haloFalloff: rand.random() * starCount/2 + 3000/props.starsSizes,
           resolution: [width, height],
           scale: scale,
           source: source,
