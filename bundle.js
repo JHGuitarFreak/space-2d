@@ -85,6 +85,7 @@ var GUI = function (_React$Component) {
         },
         _react2.default.createElement(dg.Text, { label: 'Clé seed', value: this.state.seed, onFinishChange: this.props.onFinishChangeSeed.bind(this) }),
         _react2.default.createElement(dg.Button, { label: 'Génerer clé aléatoire', onClick: this.onClickRandomizeSeed.bind(this) }),
+        _react2.default.createElement(dg.Button, { label: 'Regénerer le résultat', onClick: this.onClickRegenImg.bind(this) }),
         _react2.default.createElement(dg.Number, {
           label: 'Largeur',
           min: 1,
@@ -118,6 +119,11 @@ var GUI = function (_React$Component) {
       this.setState({
         seed: seed
       });
+      this.props.onFinishChangeSeed(seed);
+    }
+  }, {
+    key: 'onClickRegenImg',
+    value: function onClickRegenImg() {
       this.props.onFinishChangeSeed(seed);
     }
   }, {
@@ -203,7 +209,7 @@ function resize(width, height) {
   canvas.width = width;
   canvas.height = height;
   reflow(width, height);
-  scene.render(props);
+  //scene.render(props); // Ne pas regénérer à chaque resize
 }
 
 function reflow(width, height) {
