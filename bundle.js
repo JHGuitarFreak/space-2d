@@ -112,7 +112,8 @@ var GUI = function (_React$Component) {
           max: 100,
           step: 1,
           value: this.props.starsDensity,
-          decimals: 0
+          decimals: 0,
+          onChange: this.props.onChangeStarsDensity
         }),
         _react2.default.createElement(dg.Checkbox, { label: 'Soleil', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
         _react2.default.createElement(dg.Checkbox, { label: 'Nuages de gaz', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
@@ -266,6 +267,11 @@ function onChangeRenderPointStars(value) {
 
 function onChangeRenderStars(value) {
   props.renderStars = value;
+  scene.render(props);
+}
+
+function onChangeStarsDensity(value) {
+  props.starsDensity = value;
   scene.render(props);
 }
 
