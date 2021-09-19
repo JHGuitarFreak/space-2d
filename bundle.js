@@ -115,6 +115,15 @@ var GUI = function (_React$Component) {
           decimals: 0,
           onFinishChange: this.props.onChangeStarsDensity
         }),
+        _react2.default.createElement(dg.Number, {
+          label: 'Tailles des étoiles proches',
+          min: 1,
+          max: 30,
+          step: 1,
+          value: this.props.starsSizes,
+          decimals: 0,
+          onFinishChange: this.props.onChangeStarsSizes
+        }),
         _react2.default.createElement(dg.Checkbox, { label: 'Soleil', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
         _react2.default.createElement(dg.Checkbox, { label: 'Nuages de gaz', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
         _react2.default.createElement(dg.Checkbox, { label: 'Échelle large', checked: this.props.shortScale, onChange: this.props.onChangeShortScale }),
@@ -184,6 +193,7 @@ var props = {
   renderPointStars: true,
   renderStars: true,
   starsDensity: 20,
+  starsSizes:2,
   renderSun: false,
   renderNebulae: true,
   shortScale: true,
@@ -207,6 +217,8 @@ _reactDom2.default.render(_react2.default.createElement(_gui2.default, {
   onChangeRenderStars: onChangeRenderStars,
   starsDensity: props.starsDensity,
   onChangeStarsDensity: onChangeStarsDensity,
+  starsSizes: props.starsSizes,
+  onChangeStarsSizes: onChangeStarsSizes,
   renderSun: props.renderSun,
   onChangeRenderSun: onChangeRenderSun,
   renderNebulae: props.renderNebulae,
@@ -273,6 +285,11 @@ function onChangeRenderStars(value) {
 
 function onChangeStarsDensity(value) {
   props.starsDensity = value;
+  scene.render(props);
+}
+
+function onChangeStarsSizes(value) {
+  props.starsSizes = value;
   scene.render(props);
 }
 
@@ -29186,7 +29203,7 @@ var Scene = function () {
           coreRadius: rand.random() * 0.0,
           coreColor: [1, 1, 1],
           haloColor: [col_red, (col_red+col_blue)/2, col_blue],
-          haloFalloff: rand.random() * starCount/2 + 1500,
+          haloFalloff: rand.random() * starCount/props.starsSizes + 3000/starsSizes,
           resolution: [width, height],
           scale: scale,
           source: source,
