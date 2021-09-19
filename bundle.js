@@ -85,6 +85,7 @@ var GUI = function (_React$Component) {
         },
         _react2.default.createElement(dg.Number, {
           label: 'Largeur',
+          id:'width_num',
           min: 1,
           max: this.props.maxTextureSize,
           step: 1,
@@ -94,6 +95,7 @@ var GUI = function (_React$Component) {
         }),
         _react2.default.createElement(dg.Number, {
           label: 'Hauteur',
+          id:'height_num',
           min: 1,
           max: this.props.maxTextureSize,
           step: 1,
@@ -101,6 +103,8 @@ var GUI = function (_React$Component) {
           decimals: 0,
           onFinishChange: this.props.onFinishChangeHeight
         }),
+        _react2.default.createElement(dg.Button, { label: 'Utilisez les dimensions de l\'écran', onClick: this.onClickUseScreenDimensions.bind(this) }),
+        _react2.default.createElement(dg.Button, { label: 'Génerer une nouvelle image', onClick: this.onClickRandomizeSeed.bind(this) }),
         _react2.default.createElement(dg.Checkbox, { label: 'Étoiles lointaines', checked: this.props.renderPointStars, onChange: this.props.onChangeRenderPointStars }),
         _react2.default.createElement(dg.Checkbox, { label: 'Étoiles proches', checked: this.props.renderStars, onChange: this.props.onChangeRenderStars }),
         _react2.default.createElement(dg.Number, {
@@ -206,6 +210,7 @@ scene.render(props);
 _reactDom2.default.render(_react2.default.createElement(_gui2.default, {
   seed: props.seed,
   refreshImg: refreshImg,
+  onClickUseScreenDimensions: onClickUseScreenDimensions,
   onFinishChangeSeed: onFinishChangeSeed,
   maxTextureSize: scene.maxTextureSize,
   width: canvas.width,
@@ -261,6 +266,15 @@ window.onresize = function () {
 
 function refreshImg() {
   scene.render(props);
+}
+
+function onClickUseScreenDimensions() {
+  width = window.screen.width * window.devicePixelRatio;
+  height = window.screen.height * window.devicePixelRatio;
+  if (width === canvas.width && height === canvas.height) return;
+  document.getElementById("width_num").value = width;
+  document.getElementById("height_num").value = height;
+  resize(Math.round(width), Math.round(height));
 }
 
 function onFinishChangeSeed(value) {
@@ -1221,6 +1235,7 @@ var Number = function (_React$Component) {
           border: 'none',
           outline: 'none'
         },
+        id:this.props.id,
         type: 'text',
         value: this.state.value,
         onChange: this.onChange.bind(this),
