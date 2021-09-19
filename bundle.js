@@ -85,7 +85,7 @@ var GUI = function (_React$Component) {
         },
         _react2.default.createElement(dg.Text, { label: 'Clé seed', value: this.state.seed, onFinishChange: this.props.onFinishChangeSeed.bind(this) }),
         _react2.default.createElement(dg.Button, { label: 'Génerer clé aléatoire', onClick: this.onClickRandomizeSeed.bind(this) }),
-        _react2.default.createElement(dg.Button, { label: 'Regénerer le résultat', onClick: this.onClickRegenImg.bind(this) }),
+        _react2.default.createElement(dg.Button, { label: 'Regénerer le résultat', id: 'btnRegenImg' onClick: this.onClickRegenImg.bind(this) }),
         _react2.default.createElement(dg.Number, {
           label: 'Largeur',
           min: 1,
