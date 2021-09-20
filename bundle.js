@@ -3,7 +3,13 @@
 
 $(document).ready(function() {
   var elem = $('#usescreendimensions');
-  elem.parent('div').parent('div').after('<div style="border-bottom: 1px solid rgb(51, 51, 51); background-color: rgb(26, 26, 26); min-height: 24px; padding: 3px; box-sizing: border-box; display: flex; flex-flow: row wrap; align-items: center;"><div style="font: 11px Arial; color: rgb(255, 255, 255); text-align: center; width: 294px; cursor: pointer;"><span style="user-select: none;">4K : 3840x2160 ; iPhone 13 Pro Max : 2778x1284</span></div></div>')
+  var html_av = '<div style="border-bottom: 1px solid rgb(51, 51, 51); background-color: rgb(26, 26, 26); min-height: 24px; padding: 3px; box-sizing: border-box; display: flex; flex-flow: row wrap; align-items: center;"><div style="font: 11px Arial; color: rgb(255, 255, 255); text-align: center; width: 294px; cursor: pointer;"><span style="user-select: none;">';
+  var html_ap = '</span></div></div>';
+
+  elem.parent('div').parent('div').after(html_av + "4K : 3840x2160 ; 8K : 7680x4320" + html_ap);
+  elem.parent('div').parent('div').after(html_av + "Oneplus 8 Pro : 1440x3168" + html_ap);
+  elem.parent('div').parent('div').after(html_av + "iPhone 13 Pro Max : 1284x2778" + html_ap);
+  elem.parent('div').parent('div').after(html_av + "iPhone 8 : 750x1334" + html_ap);
 });
 
 Object.defineProperty(exports, "__esModule", {
