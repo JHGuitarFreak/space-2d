@@ -1,6 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
+$(document).ready(function() {
+  var elem = $('#usescreendimensions');
+  elem.parent('div').parent('div').after('<div style="border-bottom: 1px solid rgb(51, 51, 51); background-color: rgb(26, 26, 26); min-height: 24px; padding: 3px; box-sizing: border-box; display: flex; flex-flow: row wrap; align-items: center;"><div style="font: 11px Arial; color: rgb(255, 255, 255); text-align: center; width: 294px; cursor: pointer;"><span style="user-select: none;">4K : 3840x2160 ; iPhone 13 Pro Max : 2778x1284</span></div></div>')
+});
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -101,7 +106,7 @@ var GUI = function (_React$Component) {
           decimals: 0,
           onFinishChange: this.props.onFinishChangeHeight
         }),
-        _react2.default.createElement(dg.Button, { label: 'Utilisez les dimensions de l\'écran', onClick: this.props.onClickUseScreenDimensions.bind(this) }),
+        _react2.default.createElement(dg.Button, { id:'usescreendimensions', label: 'Utilisez les dimensions de l\'écran', onClick: this.props.onClickUseScreenDimensions.bind(this) }),
         _react2.default.createElement(dg.Checkbox, { label: 'Étoiles lointaines', checked: this.props.renderPointStars, onChange: this.props.onChangeRenderPointStars }),
         _react2.default.createElement(dg.Checkbox, { label: 'Étoiles proches', checked: this.props.renderStars, onChange: this.props.onChangeRenderStars }),
         _react2.default.createElement(dg.Number, {
