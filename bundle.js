@@ -2828,7 +2828,8 @@ var Text = function (_React$Component) {
               padding: this.context.style.paddingY + 'px ' + this.context.style.paddingX + 'px',
               width: '100%',
               border: 'none',
-              outline: 'none'
+              outline: 'none',
+              textAlign:'center'
             } })
         )
       );
