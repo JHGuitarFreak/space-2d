@@ -95,7 +95,7 @@ var GUI = function (_React$Component) {
           }
         },
         _react2.default.createElement(dg.Number, {
-          label: 'Largeur',
+          label: 'Width',
           min: 1,
           max: this.props.maxTextureSize,
           step: 1,
@@ -104,7 +104,7 @@ var GUI = function (_React$Component) {
           onFinishChange: this.props.onFinishChangeWidth
         }),
         _react2.default.createElement(dg.Number, {
-          label: 'Hauteur',
+          label: 'Height',
           min: 1,
           max: this.props.maxTextureSize,
           step: 1,
@@ -112,11 +112,11 @@ var GUI = function (_React$Component) {
           decimals: 0,
           onFinishChange: this.props.onFinishChangeHeight
         }),
-        _react2.default.createElement(dg.Button, { id:'usescreendimensions', label: 'Utilisez les dimensions de l\'écran', onClick: this.props.onClickUseScreenDimensions.bind(this) }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Étoiles lointaines', checked: this.props.renderPointStars, onChange: this.props.onChangeRenderPointStars }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Étoiles proches', checked: this.props.renderStars, onChange: this.props.onChangeRenderStars }),
+        _react2.default.createElement(dg.Button, { id:'usescreendimensions', label: 'Use Screen Dimensions', onClick: this.props.onClickUseScreenDimensions.bind(this) }),
+        _react2.default.createElement(dg.Checkbox, { label: 'Point Stars', checked: this.props.renderPointStars, onChange: this.props.onChangeRenderPointStars }),
+        _react2.default.createElement(dg.Checkbox, { label: 'Nearby Stars', checked: this.props.renderStars, onChange: this.props.onChangeRenderStars }),
         _react2.default.createElement(dg.Number, {
-          label: 'Densité d\'étoiles proches',
+          label: 'Point Star Density',
           min: 1,
           max: 100,
           step: 1,
@@ -125,7 +125,7 @@ var GUI = function (_React$Component) {
           onFinishChange: this.props.onChangeStarsDensity
         }),
         _react2.default.createElement(dg.Number, {
-          label: 'Tailles des étoiles proches',
+          label: 'Near Star Density',
           min: 1,
           max: 30,
           step: 1,
@@ -133,13 +133,13 @@ var GUI = function (_React$Component) {
           decimals: 0,
           onFinishChange: this.props.onChangeStarsSizes
         }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Soleil', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Nuages de gaz', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
-        _react2.default.createElement(dg.Checkbox, { label: 'Échelle large', checked: this.props.shortScale, onChange: this.props.onChangeShortScale }),
-        _react2.default.createElement(dg.Button, { label: 'Génerer une nouvelle image', onClick: this.onClickRandomizeSeed.bind(this) }),
-        _react2.default.createElement(dg.Text, { label: 'Clé de l\'image', value: this.state.seed, onFinishChange: this.props.onFinishChangeSeed.bind(this) }),
-        _react2.default.createElement(dg.Button, { label: 'Regénerer le résultat', id: 'btnRegenImg', onClick: this.onClickRegenImg.bind(this) }),
-        _react2.default.createElement(dg.Button, { label: 'Télécharger le résultat (PNG)', onClick: this.onClickDlPic.bind(this) })
+        _react2.default.createElement(dg.Checkbox, { label: 'Sun', checked: this.props.renderSun, onChange: this.props.onChangeRenderSun }),
+        _react2.default.createElement(dg.Checkbox, { label: 'Nebulae', checked: this.props.renderNebulae, onChange: this.props.onChangeRenderNebulae }),
+        _react2.default.createElement(dg.Checkbox, { label: 'Short Scale', checked: this.props.shortScale, onChange: this.props.onChangeShortScale }),
+        _react2.default.createElement(dg.Button, { label: 'Generate New Image', onClick: this.onClickRandomizeSeed.bind(this) }),
+        _react2.default.createElement(dg.Text, { label: 'Seed', value: this.state.seed, onFinishChange: this.props.onFinishChangeSeed.bind(this) }),
+        _react2.default.createElement(dg.Button, { label: 'Regenerate Results', id: 'btnRegenImg', onClick: this.onClickRegenImg.bind(this) }),
+        _react2.default.createElement(dg.Button, { label: 'Download Image (PNG)', onClick: this.onClickDlPic.bind(this) })
       );
     }
   }, {
@@ -2410,12 +2410,12 @@ var GUI = function (_React$Component) {
             this.state.expanded && _react2.default.createElement(
               'span',
               { style: noSelect },
-              'Fermer les contrôles'
+              '↑ Hide Controls ↑'
             ),
             !this.state.expanded && _react2.default.createElement(
               'span',
               { style: noSelect },
-              'Ouvrir les contrôles'
+              '↓ Show Controls ↓'
             )
           )
         )
